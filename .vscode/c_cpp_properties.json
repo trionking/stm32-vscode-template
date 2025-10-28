@@ -3,7 +3,7 @@
     "configurations": [
         {
             "name": "STM32",
-            "compilerPath": "C:/ST/STM32CubeCLT_1.19.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc.exe",
+            "compilerPath": "${env:STM32_CUBE_CLT_PATH}/GNU-tools-for-STM32/bin/arm-none-eabi-gcc.exe",
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "gcc-arm",

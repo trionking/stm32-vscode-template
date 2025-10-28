@@ -16,8 +16,40 @@ STM32CubeIDE에서 생성한 프로젝트를 VSCode에서 빌드할 수 있도�
 
 다음 도구가 설치되어 있어야 합니다:
 
-- **STM32CubeIDE** (예: `C:/ST/STM32CubeIDE_1.19.0`)
-- **STM32CubeCLT** (예: `C:/ST/STM32CubeCLT_1.19.0`)
+- **STM32CubeIDE** (예: `C:\ST\STM32CubeIDE_1.19.0`)
+- **STM32CubeCLT** (예: `C:\ST\STM32CubeCLT_1.19.0`)
+
+### 1-1. 환경 변수 설정 (권장)
+
+**다른 환경에서도 쉽게 사용할 수 있도록 Windows 환경 변수를 설정하세요.**
+
+#### 설정 방법
+
+1. Windows 검색에서 "환경 변수" 검색
+2. "시스템 환경 변수 편집" 실행
+3. "환경 변수" 버튼 클릭
+4. "사용자 변수" 또는 "시스템 변수"에서 "새로 만들기" 클릭
+5. 다음 두 개의 변수 추가:
+
+```
+변수 이름: STM32_CUBE_IDE_PATH
+변수 값:   C:\ST\STM32CubeIDE_1.19.0
+
+변수 이름: STM32_CUBE_CLT_PATH
+변수 값:   C:\ST\STM32CubeCLT_1.19.0
+```
+
+**주의사항:**
+- 경로 끝에 백슬래시(`\`)를 붙이지 마세요
+- 설치된 버전에 맞게 경로를 수정하세요
+- 환경 변수 설정 후 VSCode를 재시작하세요
+
+#### 환경 변수 사용의 장점
+
+- ✅ 버전이 다른 환경에서도 환경 변수만 수정하면 됨
+- ✅ `.vscode` 폴더 설정 파일은 수정 불필요
+- ✅ 팀원들과 공유 시 각자의 환경에 맞게 쉽게 설정 가능
+- ✅ GitHub에서 클론 후 바로 사용 가능
 
 ### 2. 프로젝트 생성
 
@@ -115,9 +147,31 @@ make -j all
 
 ## 도구 버전이 다른 경우
 
-설치된 STM32CubeIDE 또는 STM32CubeCLT 버전이 다르면 `tasks.json`과 `c_cpp_properties.json`에서 경로를 수정하세요.
+**환경 변수를 사용하면 이 문제가 간단해집니다!**
 
-**make.exe 경로 찾기:**
+설치된 도구 버전이 다를 경우:
+
+### 환경 변수를 설정한 경우 (권장)
+
+1. Windows 환경 변수만 수정하면 됩니다
+2. VSCode 설정 파일(`.vscode/*.json`)은 수정할 필요가 없습니다
+
+**설정 방법:**
+
+Windows 환경 변수에서 버전에 맞게 경로를 수정:
+
+```
+STM32_CUBE_IDE_PATH = C:\ST\STM32CubeIDE_X.XX.X
+STM32_CUBE_CLT_PATH = C:\ST\STM32CubeCLT_X.XX.X
+```
+
+VSCode를 재시작하면 새 경로가 적용됩니다.
+
+### 환경 변수를 사용하지 않는 경우
+
+직접 `tasks.json`과 `c_cpp_properties.json`에서 경로를 수정해야 합니다.
+
+**make.exe 플러그인 경로 찾기:**
 ```bash
 dir "C:\ST\STM32CubeIDE_*\STM32CubeIDE\plugins" | findstr "externaltools.make"
 ```

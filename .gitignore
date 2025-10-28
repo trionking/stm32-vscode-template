@@ -1,0 +1,27 @@
+# Build outputs
+Debug/
+Release/
+*.elf
+*.hex
+*.bin
+*.map
+*.list
+*.su
+*.d
+*.o
+*.cyclo
+
+# IDE specific
+.settings/
+*.launch
+
+# OS specific
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.bak
+*.log

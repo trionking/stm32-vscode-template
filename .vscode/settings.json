@@ -1,0 +1,22 @@
+{
+    "files.associations": {
+        "*.h": "c",
+        "*.c": "c"
+    },
+    "C_Cpp.default.configurationProvider": "ms-vscode.cpptools",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Debug": false,
+        "**/Release": false
+    },
+    "search.exclude": {
+        "**/Debug": true,
+        "**/Release": true,
+        "**/Drivers": false
+    },
+    "files.encoding": "utf8"
+}
